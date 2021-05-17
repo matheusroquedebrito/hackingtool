@@ -6,7 +6,10 @@ import logo as l1
 import platform
 import cliente as c1
 import socket
+
 so=platform.system()
+
+
 
 
 class bcolors:
@@ -110,56 +113,35 @@ else:
             if escolha5==99:
                 menu=99
             if escolha5==1:
-                HOST = '127.0.0.1'
-                PORT = 50001
-
-                s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-                s.connect((HOST, PORT))
-                s.sendall(str.encode("bom dia"))
-                data = s.recv(1024)
-                print("conexao bem sucedida")
-               
+                print("abrir conexao[1] fechar conexao[2]")
+                escolha6=int(input(""))
                 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                if escolha5==2:
-                    print("QUEBRA DE SENHA")
-
-
-
-
-
-            if escolha5==3:
+                if escolha6==1:
+                    #mandar programa executar um comando no terminal q inicia o servidor
+                        
+                        HOST = '127.0.0.1'
+                        PORT = 50000
+        
+                        s=socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                        s.connect((HOST, PORT))
+                        s.sendall(str.encode("bom dia"))
+                        data = s.recv(1024)
+                        
+                        print("conexao bem sucedida")
+                        print("retornar ao menu principal")
+                        time.sleep(2)
+                        menu=99
+                if escolha6 ==2:
+                        print('fechando conexao')
+                        s.close()
+                        menu=99
+                        
+                        
                 
-                if so == 'Windows':
-                    print("Seu sistema operacional e:WINDOWS")
-                elif so == 'Linux':
-                    l1.linux()
-                    print("Seu sistema operacional e:LINUX")
-                
-
-                else:
                     
-                    print("Seu sistema operacional e: NAO IDENTIFICADO")
-
-
-
+                        
+        
+        
+      
+        
+        
