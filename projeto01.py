@@ -117,6 +117,7 @@ else:
                 s.connect((HOST, PORT))
                 s.sendall(str.encode("bom dia"))
                 data = s.recv(1024)
+                print("conexao bem sucedida")
                
                 
 
